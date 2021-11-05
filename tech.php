@@ -1,3 +1,3 @@
 <?php
-include_once("tech-sample-hp.html");
+include_once("tech.html");
 ?>
