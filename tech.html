@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- SEO対策metaタグ -->
+      <meta name="description" content="だいたい160文字以内">
+      <!-- CSS -->
+      <link rel="stylesheet" href="style.css">
+      <!-- allCSS -->
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
+
+      <title>ホームページ</title>
+</head>
+
+<body>
+      <!-- headerブロック -->
+      <header>
+            <!-- インナー -->
+            <div class="header__inner">
+                  <a href="./tech.html">
+                        <img src="img\logo.png" alt="" class="header__logo">
+                  </a>
+                  <div id="nav" class="header__nav-group">
+                        <div class="header__nav-item"><a href="tech#about">About</a></div>
+                        <div class="header__nav-item"><a href="tech#service">Service</a></div>
+                        <div class="header__nav-item"><a href="tech#news">News</a></div>
+                        <div class="header__nav-item header__contact"><i class="fas fa-file-signature"></i>Contact<a
+                               class="a__btn"href="contact.html"></a></div>
+                  </div>
+                  <!-- モーダル -->
+                  <div id="hamburger__modal" class="hamburger__modal"></div>
+                  <!-- ハンバーガーメニューボタン -->
+                  <div id="hamburger__btn" class="hamburger__btn"><i class="fas fa-bars"></i></div>
+            </div>
+            <script>
+                  var lastInnerWidth = document.documentElement.clientWidth; //window.InnerWidthで現在の画面幅を取得
+                  var nav = document.getElementById('nav');
+                  if (lastInnerWidth <= 480) { //画面幅480px以下の場合
+                        nav.classList.add('hamburger'); //クラス「hamburger」を追加
+                  }
+                  // 横幅が変わったとき実行される関数
+                  window.addEventListener("resize", function () {
+                        // 現在と前回の横幅が違う場合だけ実行
+                        if (lastInnerWidth != document.documentElement.clientWidth) {
+                              // 横幅を記録しておく
+                              lastInnerWidth = document.documentElement.clientWidth;
+                              if (lastInnerWidth <= 480) { //画面幅480px以下の場合
+                                    if (!(nav.classList.contains(hamburger))) { //クラス「hamburger」がない場合
+                                          nav.classList.add('hamburger'); // クラス「hamburger」を追加
+                                    }
+                              } else { //画面幅481px以上の場合
+                                    nav.classList.remove('hamburger'); //クラス「hamburger」を削除
+                              }
+                        }
+                  });
+
+                  // ハンバーガーメニューボタンをクリックしたときに実行される関数
+                  document.getElementById('hamburger__btn').addEventListener('click', function() {
+                        // ナビ一覧とモーダルを表示
+                        nav.style.display = "block";
+                        document.getElementById('hamburger__modal').style.display = "block";
+                  });
+                  // ハンバーガーメニューが表示されているときに、モーダルがクリックされると実行される関数
+                  document.getElementById('hamburger__modal').addEventListener('click', function () {
+                        // ナビ一覧とモーダルを非表示
+                        nav.style.display = "none";
+                        document.getElementById('hamburger__modal').style.display = "none";
+                  });
+            </script>
+      </header>
+
+      <!-- TOPブロック -->
+      <div class="main">
+            <div class="top__img">
+                  <img src="img\top1.png" alt="">
+                  <div id="top__text" class="top__text">どこにいても、<span class="br__sp">生まれても、</span><span
+                        class="br__pc">世界最高の教育を受けられる。</span></div>
+            </div>
+
+            <!-- About -->
+            <div id="about" class="about content__items">
+                  <!-- コンテンツのインナー -->
+                  <div class="content__inner">
+                        <!-- コンテンツのタイトルエリア -->
+                        <div class="content__header">
+                              <!-- コンテンツのタイトル名 -->
+                              <div class="content__header__inner">
+                                    About
+                                    <!-- 下線 -->
+                                    <div class="content__header__border"></div>
+                              </div>
+                        </div>
+                        <!-- コンテンツの内容 -->
+                        <div class="about__content">
+                              <div class="about__img">
+                                    <img src="img\about.png" alt="">
+                              </div>
+                              <div class="about__text">
+                                    <div class="about__text__title">
+                                          プログラミングスクール<br>
+                                          テックアイエス
+                                    </div>
+                                    <div class="about__text__dis">
+                                          テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                                          テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                                          テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト              
+                                    </div>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+
+            <!-- Service -->
+            <div id="service" class="service content__items">
+                  <!-- コンテンツのインナー -->
+                  <div class="content__inner">
+                        <!-- コンテンツのタイトルエリア -->
+                        <div class="content__header">
+                              <!-- コンテンツのタイトル名 -->
+                              <div class="content__header__inner">
+                                    Service
+                                    <!-- 下線 -->
+                                    <div class="content__header__border"></div>
+                              </div>
+                        </div>
+                        <!-- コンテンツの内容 -->
+                        <div class="service__content">
+                              <!-- Serviceのカード -->
+                              <div class="service__card">
+                                    <!-- カード画像 -->
+                                    <div class="service__card__img">
+                                          <img src="img\service1.png" alt="">
+                                    </div>
+                                    <!-- カードのタイトル -->
+                                    <div class="service__card__title">
+                                          現役エンジニア講師
+                                    </div>
+                                    <!-- カードの説明文 -->
+                                    <div class="service__card__dis">
+                                          ここにテキストが入りますここにテキストが入ります
+                                          ここにテキストが入りますここにテキストが入ります
+                                          ここにテキストが入りますここにテキストが入ります
+                                          ここにテキストが入りますここにテキストが入ります              
+                                    </div>
+                              </div>
+                              <!-- Serviceのカード -->
+                              <div class="service__card">
+                                    <!-- カード画像 -->
+                                    <div class="service__card__img">
+                                          <img src="img\service2.png" alt="">
+                                    </div>
+                                    <!-- カードのタイトル -->
+                                    <div class="service__card__title">
+                                          5分以内の質問対応
+                                    </div>
+                                    <!-- カードの説明文 -->
+                                    <div class="service__card__dis">
+                                          ここにテキストが入りますここにテキストが入ります
+                                          ここにテキストが入りますここにテキストが入ります
+                                          ここにテキストが入りますここにテキストが入ります
+                                          ここにテキストが入りますここにテキストが入ります              
+                                    </div>
+                              </div>
+                              <!-- Serviceのカード -->
+                              <div class="service__card">
+                                    <!-- カード画像 -->
+                                    <div class="service__card__img">
+                                          <img src="img\service3.png" alt="">
+                                    </div>
+                                    <!-- カードのタイトル -->
+                                    <div class="service__card__title">
+                                          クラス制度・イベント
+                                    </div>
+                                    <!-- カードの説明文 -->
+                                    <div class="service__card__dis">
+                                          ここにテキストが入りますここにテキストが入ります
+                                          ここにテキストが入りますここにテキストが入ります
+                                          ここにテキストが入りますここにテキストが入ります
+                                          ここにテキストが入りますここにテキストが入ります              
+                                    </div>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+
+            <!-- News -->
+            <div id="news" class="news content__items">
+                  <!-- コンテンツのインナー -->
+                  <div class="content__inner">
+                        <!-- コンテンツのタイトルエリア -->
+                        <div class="content__header">
+                              <!-- コンテンツのタイトル名 -->
+                              <div class="content__header__inner">
+                                    News
+                                    <!-- 下線 -->
+                                    <div class="content__header__border"></div>
+                              </div>
+                        </div>
+                        <!-- コンテンツの内容 -->
+                        <div class="news__content">
+                              <a href="">
+                                    <!-- 1記事 -->
+                                    <div class="news__items">
+                                          <!-- 記事の投稿日 -->
+                                          <div class="news__item news__date">
+                                                2021.03.31
+                                          </div>
+                                          <!-- 記事のタイトル -->
+                                          <div class="news__item news__title">
+                                                タイトルタイトルタイトルタイトルタイトル
+                                          </div>
+                                          <!-- デザイン右の矢印 -->
+                                          <div class="news__item news__anchor">
+                                                →
+                                          </div>
+                                    </div>
+                              </a>
+                              <div class="news__button">
+                                    News一覧はこちら
+                                    <a href="" class="a__btn"></a>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+
+            <!-- Contact -->
+            <div id="contact" class="contact content__items">
+                  <!-- コンテンツのインナー -->
+                  <div class="content__inner">
+                        <!-- コンテンツのタイトルエリア -->
+                        <div class="content__header">
+                              <!-- コンテンツのタイトル -->
+                              <div class="content__header__inner">
+                                    Contact
+                                    <!-- 下線 -->
+                                    <div class="content__header__border"></div>
+                              </div>
+                        </div>
+                        <div class="contact__content">
+                              <div class="contact__text">
+                                    まずはお気軽に<br>
+                                    無料で体験＆カウンセリング
+                              </div>
+                              <div class="contact__button">
+                                    申し込みはこちらから
+                                    <a href="contact.html" class="a__btn"></a>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+
+      </div>
+            <!-- Footer -->
+            <footer>
+                  <!-- PC用フッター画像 -->
+                  <img src="img\footer_pc.png" alt="" class="footer__img__pc">
+                  <!-- SP用フッター画像 -->
+                  <img src="img\footer_sp.png" alt="" class="footer__img__sp">
+            </footer>
+
+</body>
+
+</html>
